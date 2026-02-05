@@ -42,16 +42,16 @@ app.post('/api/users', (req, res) => {
   res.status(201).json({ id: 1, name, email, created: new Date().toISOString() });
 });
 
+// 404 handler
+app.use('*', (req, res) => {
+  res.status(404).json({ error: 'Route not found' });
+});
+
 // Error handling
 app.use((err, req, res) => {
   // eslint-disable-next-line no-console
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
-});
-
-// 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({ error: 'Route not found' });
 });
 
 if (require.main === module) {
