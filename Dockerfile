@@ -7,7 +7,7 @@ RUN npm ci --only=production
 
 COPY src/ ./src/
 
-EXPOSE 3000
+EXPOSE $PORT
 
 USER node
 

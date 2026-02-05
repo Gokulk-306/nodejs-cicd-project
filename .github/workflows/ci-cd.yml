@@ -61,6 +61,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Deploy to staging
-      run: echo "Deploying to staging environment"
-      # Add your deployment commands here
+    - name: Deployment Ready
+      run: |
+        echo "✅ Build completed successfully!"
+        echo "📦 Docker image: nodejs-cicd-app"
+        echo "🚀 Ready for deployment to Render"
+        echo "📋 Next: Connect GitHub repo to Render for auto-deploy"
